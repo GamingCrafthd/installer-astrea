@@ -13,10 +13,11 @@ apt install -y openbox nitrogen tint2 lightdm xorg
 systemctl enable lightdm
 
 # Create System Directories
-mkdir /etc/astreaos
-mkdir /etc/meteorite
+mkdir -p /etc/astreaos
+mkdir -p /etc/meteorite
 
 # Create autostart file for openbox
+mkdir -p /etc/xdg/openbox/
 echo /etc/meteorite/startup > /etc/xdg/openbox/autostart
 
 # Install Meteorite
@@ -29,5 +30,11 @@ curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/startup 
 # Updating Permissions
 chmod 0755 /etc/xdg/openbox/autostart
 chmod +x /etc/meteorite/startup
+
+# Download wallpapers
+mkdir -p /tmp/aos_wp
+mkdir -p /usr/share/backgrounds/AstreaOS
+git clone https://www.github.com/astreaos/wallpapers /tmp/aos_wp
+cp /tmp/aos_wp/Wallpapers/* /usr/share/backgrounds/AstreaOS/*
 
 printf "\n\n(!) You can now reboot.\n\n"
