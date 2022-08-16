@@ -16,8 +16,8 @@ systemctl enable lightdm
 mkdir /etc/astreaos
 mkdir /etc/meteorite
 
-# Create autorun file for openbox
-echo /etc/meteorite/startup > /etc/xdg/openbox/autorun
+# Create autostart file for openbox
+echo /etc/meteorite/startup > /etc/xdg/openbox/autostart
 
 # Install Meteorite
 curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/meteorite.desktop \
