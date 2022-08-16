@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Meteorite
+Comment=The Desktop Enviroment of AstreaOS.
+Exec=/usr/bin/openbox-session
+TryExec=/usr/bin/openbox-session
+Type=Application
