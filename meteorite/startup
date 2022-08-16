@@ -1,6 +1,5 @@
 #!/bin/bash
-# Made with <3 by the AstreaOS team!
 # Copyright (c) 2022 AstreaOS
 
 nitrogen --restore &
-tint 2
+tint2
