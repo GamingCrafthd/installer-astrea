@@ -26,4 +26,8 @@ curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/meteorit
 curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/startup \
   -o /etc/meteorite/startup
 
+# Updating Permissions
+chmod 0755 /etc/xdg/openbox/autostart
+chmod +x /etc/meteorite/startup
+
 printf "\n\n(!) You can now reboot.\n\n"
