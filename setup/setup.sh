@@ -10,6 +10,8 @@ apt install -y sudo wget curl ufw git
 # Install basic desktop enviroment
 apt install -y openbox nitrogen tint2 lightdm xorg
 
+systemctl enable lightdm
+
 # Create System Directories
 mkdir /etc/astreaos
 mkdir /etc/meteorite
@@ -23,3 +25,5 @@ curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/meteorit
 
 curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/startup \
   -o /etc/meteorite/startup
+
+printf "\n\n(!) You can now reboot.\n\n"
