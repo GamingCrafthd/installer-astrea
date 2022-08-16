@@ -30,6 +30,7 @@ curl https://raw.githubusercontent.com/AstreaOS/installer/dev/meteorite/startup 
 # Updating Permissions
 chmod 0755 /etc/xdg/openbox/autostart
 chmod +x /etc/meteorite/startup
+chmod +x ./sudo.sh
 
 # Download wallpapers
 mkdir -p /tmp/aos_wp
