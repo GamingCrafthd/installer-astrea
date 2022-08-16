@@ -38,4 +38,4 @@ mkdir -p /usr/share/backgrounds/AstreaOS
 git clone https://www.github.com/astreaos/wallpapers /tmp/aos_wp
 cp /tmp/aos_wp/Wallpapers/* /usr/share/backgrounds/AstreaOS/*
 
-printf "\n\n\(\!\) You can now reboot.\n\n"
+printf "\n\n\(i) You can now reboot.\n\n"
