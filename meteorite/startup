@@ -2,4 +2,5 @@
 # Copyright (c) 2022 AstreaOS
 
 nitrogen --restore &
-tint2
+tint2 &
+xcompmgr -o .25 -t 1 -r 1 -l -1 -c -C

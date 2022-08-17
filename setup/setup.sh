@@ -8,7 +8,7 @@ apt update -y
 apt install -y sudo wget curl ufw git
 
 # Install basic desktop enviroment
-apt install -y openbox nitrogen tint2 lightdm xorg
+apt install -y openbox nitrogen tint2 lightdm xorg xcompmgr
 
 systemctl enable lightdm
 
