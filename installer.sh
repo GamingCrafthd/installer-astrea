@@ -1,6 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2022 - AstreaOS
-# Set up the AstreaOS desktop!
+# Copyright (c) 2022 AstreaOS
 
 # Set column variable for banner
 columns=$(tput cols)
@@ -49,7 +48,7 @@ exit_error() {
         #;;
         # Everything else.
         #*)
-            #echo -e "\e[91mYou need to be on AstreaOS to be able to use this command!"
+            #echo -e "\e[91mYou need to be on AstreaOS to be able to use this command."
             #exit
         #;;
     #esac
@@ -73,7 +72,7 @@ startup() {
     printf %${columns}s | tr " " "="
 
     echo -e "\n\n${info_col}(1) Install AstreaOS${reset_col}"
-    echo -e "This installs the AstreaOS linux distro."
+    echo -e "This installs AstreaOS."
     echo -e "${info_col}(2) Uninstall Packages${reset_col}"
     echo -e "This uninstalls all packages installed by this installer."
     echo -e "${info_col}(3) Create User${reset_col}"
@@ -81,7 +80,7 @@ startup() {
     echo -e "${info_col}(4) Logs${reset_col}"
     echo -e "Prints out the previous log."
     echo -e "${info_col}(5) Quit${reset_col}"
-    echo -e "Quits out of the installer safely.\n"
+    echo -e "Exits the installer.\n"
 }
 
 refresh_log() {
@@ -140,7 +139,7 @@ do
                     chmod +x /etc/meteorite/startup || exit_error
                 } &>> /var/log/astrea-setup.log
 
-                echo -e "${success_col}Installation successful!${reset_col}"
+                echo -e "${success_col}Installation successful.${reset_col}"
                 echo -e "${warning_col}${bold_col}(i) Rebooting in 5 seconds...${reset_col}"
                 sleep 5
                 sudo reboot
@@ -166,7 +165,7 @@ do
                     apt-get -y autoremove || exit_error
                 } &>> /var/log/astrea-setup.log
 
-                echo -e "${success_col}Uninstall successful!${reset_col}"
+                echo -e "${success_col}Uninstall successful.${reset_col}"
                 echo -e "${warning_col}${bold_col}(i) Rebooting in 5 seconds...${reset_col}"
                 sleep 5
                 reboot
@@ -192,16 +191,16 @@ do
                 read -p $'\033[96mType in your desired shell: \033[0m' choose_shell
                 sudo usermod --shell ${choose_shell} ${create_user}
                 ######
-                read -p $'\033[96mShould this user be a sudoer? \033[0m[y/n] ' choose_sudoer
+                read -p $'\033[96mShould this user have permissions to use the sudo command? \033[0m[y/n] ' choose_sudoer
                 if [ "$choose_sudoer" == "y" ]
                 then
                     sudo usermod -aG sudo ${create_user}
-                    echo -e "${success_col}'${create_user}' is now a sudoer!${reset_col}"
+                    echo -e "${success_col}'${create_user}' will have sudo permissions.${reset_col}"
                 else
-                    echo -e "${warning_col}'${create_user}' won't be a sudoer!${reset_col}"
+                    echo -e "${warning_col}'${create_user}' won't have sudo permissions.${reset_col}"
                 fi
                 ######
-                echo -e "${success_col}User created successfully!${reset_col}"
+                echo -e "${success_col}User created successfully.${reset_col}"
                 startup
                 ;;
             "Logs")
@@ -209,7 +208,7 @@ do
                 startup
                 ;;
             "Quit")
-                echo -e "${success_col}Goodbye!${reset_col}"
+                echo -e "${success_col}Good-bye!${reset_col}"
                 exit
                 ;;
             *) echo -e "${error_col}(i) Error: '$REPLY' is an invalid option.${reset_col}"
